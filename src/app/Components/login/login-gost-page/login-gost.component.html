@@ -1,0 +1,15 @@
+<body>
+<div class="wrapper">
+  <h1>Log In</h1>
+  <p>as guest</p>
+  <mat-divider></mat-divider>
+  <div class="form">
+    <app-input-field id="username" label="Username"></app-input-field>
+    <app-input-field id="password" label="Password"></app-input-field>
+  </div>
+  <a id="lozinkaRepair">Zaboravili ste lozinku?</a> <br>
+  <button mat-raised-button id="loginBtn" color="primary" (click)="Login()">Login</button>
+  <br>
+  <a routerLink="/putanja-registracijaGost" id="registracija">Nemate korisnički račun? Registrujte se.</a>
+</div>
+</body>
