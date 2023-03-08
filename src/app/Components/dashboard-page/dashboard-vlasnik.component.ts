@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-vlasnik',
+  selector: 'app-dashboard-page',
   templateUrl: './dashboard-vlasnik.component.html',
   styleUrls: ['./dashboard-vlasnik.component.css']
 })
