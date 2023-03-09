@@ -7,15 +7,14 @@ import {FormControl, Validators} from "@angular/forms";
   styleUrls: ['./input-field.component.css']
 })
 export class InputFieldComponent {
-  @Input() id: string="";
+  @Input() id: string = "";
   @Input() label: any;
-
-  username= new FormControl('',[Validators.required]);
+  @Input() input: any;
 
   constructor() {
   }
 
   getErrorMessage() {
-    return "error poruka";
+    return "Check your input!";
   }
 }

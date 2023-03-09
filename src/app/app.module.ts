@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
+import {HttpClientModule} from "@angular/common/http";
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -29,6 +30,7 @@ import {RegisterGostComponent} from './Components/register/register-gost-page/re
 import {RegisterVlasnikComponent} from './Components/register/register-vlasnik-page/register-vlasnik.component';
 import {InputFieldComponent} from './Components/input-field/input-field.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PasswordFieldComponent } from './Components/password-field/password-field.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RegisterAdminComponent,
     RegisterGostComponent,
     RegisterVlasnikComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    PasswordFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatRadioModule,
     MatNativeDateModule,
     MatTooltipModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {path: '', component: HomePageComponent},
