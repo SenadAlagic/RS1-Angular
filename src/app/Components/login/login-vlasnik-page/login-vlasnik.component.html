@@ -1,1 +1,15 @@
-<p>login-vlasnik works!</p>
+<body>
+<div class="wrapper">
+  <h1>Log In</h1>
+  <p>as hotel owner</p>
+  <mat-divider></mat-divider>
+  <div class="form">
+    <app-input-field id="username" label="Username" [input]=username></app-input-field>
+    <app-password-field id="password" label="Password" [password]=password></app-password-field>
+  </div>
+  <a id="lozinkaRepair">Zaboravili ste lozinku?</a> <br>
+  <button mat-raised-button id="loginBtn" color="primary" (click)="Login()">Login</button>
+  <br>
+  <a routerLink="/registerVlasnik" id="registracija">Nemate korisnički račun? Registrujte se.</a>
+</div>
+</body>
