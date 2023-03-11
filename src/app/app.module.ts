@@ -18,7 +18,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import {NotFoundComponent} from './Components/not-found-page/not-found.component';
 import {LandingPageComponent} from './Components/landing-page/landing-page.component';
-import {HomePageComponent} from './Components/home-page/home-page.component';
 import {ProfileComponent} from './Components/profile-page/profile.component';
 import {DashboardVlasnikComponent} from './Components/dashboard-page/dashboard-vlasnik.component';
 import {RouterModule} from "@angular/router";
@@ -30,6 +29,8 @@ import {RegisterGostComponent} from './Components/register/register-gost-page/re
 import {RegisterVlasnikComponent} from './Components/register/register-vlasnik-page/register-vlasnik.component';
 import {InputFieldComponent} from './Components/input-field/input-field.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
+import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
 import { PasswordFieldComponent } from './Components/password-field/password-field.component';
 
 @NgModule({
@@ -37,7 +38,6 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     AppComponent,
     NotFoundComponent,
     LandingPageComponent,
-    HomePageComponent,
     ProfileComponent,
     DashboardVlasnikComponent,
     LoginAdminComponent,
@@ -47,6 +47,8 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     RegisterGostComponent,
     RegisterVlasnikComponent,
     InputFieldComponent,
+    OpeningPageComponent,
+    LoginOpeningPageComponent,
     PasswordFieldComponent
   ],
   imports: [
@@ -66,9 +68,11 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     HttpClientModule,
     RouterModule.forRoot(
       [
-        {path: '', component: HomePageComponent},
+        {path: '', component: OpeningPageComponent},
         {path: 'loginGost', component: LoginGostComponent},
         {path: 'loginVlasnik', component: LoginVlasnikComponent},
+        {path: 'registracijaVlasnik', component: RegisterVlasnikComponent},
+        {path: 'registracijaGost', component:RegisterGostComponent},
         {path: '**', component: NotFoundComponent}
       ]),
     ReactiveFormsModule,
