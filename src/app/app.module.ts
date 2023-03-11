@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
+import {HttpClientModule} from "@angular/common/http";
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -31,6 +32,7 @@ import {InputFieldComponent} from './Components/input-field/input-field.componen
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
 import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
+import { PasswordFieldComponent } from './Components/password-field/password-field.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { LoginOpeningPageComponent } from './Components/login-opening-page/login
     RegisterVlasnikComponent,
     InputFieldComponent,
     OpeningPageComponent,
-    LoginOpeningPageComponent
+    LoginOpeningPageComponent,
+    PasswordFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +67,7 @@ import { LoginOpeningPageComponent } from './Components/login-opening-page/login
     MatRadioModule,
     MatNativeDateModule,
     MatTooltipModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {path: '', component: OpeningPageComponent},

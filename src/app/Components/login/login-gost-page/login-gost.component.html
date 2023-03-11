@@ -4,8 +4,8 @@
   <p>as guest</p>
   <mat-divider></mat-divider>
   <div class="form">
-    <app-input-field id="username" label="Username"></app-input-field>
-    <app-input-field id="password" label="Password"></app-input-field>
+    <app-input-field id="username" label="Username" [input]=username></app-input-field>
+    <app-password-field id="password" label="Password" [password]=password></app-password-field>
   </div>
   <a id="lozinkaRepair">Zaboravili ste lozinku?</a> <br>
   <button mat-raised-button id="loginBtn" color="primary" (click)="Login()">Login</button>
