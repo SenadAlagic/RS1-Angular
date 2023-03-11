@@ -68,15 +68,6 @@ import { LoginOpeningPageComponent } from './Components/login-opening-page/login
     MatNativeDateModule,
     MatTooltipModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      [
-        { path: '', component: OpeningPageComponent },
-        { path: 'loginGost', component: LoginGostComponent },
-        { path: 'loginVlasnik', component: LoginVlasnikComponent },
-        { path: 'registracijaVlasnik', component: RegisterVlasnikComponent },
-        { path: 'registracijaGost', component: RegisterGostComponent },
-        { path: '**', component: NotFoundComponent }
-      ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule
