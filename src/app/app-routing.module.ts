@@ -11,6 +11,11 @@ import {ProfileComponent} from "./Components/profile-page/profile.component";
 import {NotFoundComponent} from "./Components/not-found-page/not-found.component";
 import {MojeRezervacijeComponent} from "./Components/moje-rezervacije/moje-rezervacije.component";
 import {OpeningPageComponent} from "./Components/opening-page/opening-page.component";
+import {MojeRecenzijeComponent} from "./Components/moje-recenzije/moje-recenzije.component";
+import {MojiObjektiComponent} from "./Components/moji-objekti/moji-objekti.component";
+import {PoveziKreditnuKarticuComponent} from "./Components/povezi-kreditnu-karticu/povezi-kreditnu-karticu.component";
+import {ZahtjeviComponent} from "./Components/zahtjevi/zahtjevi.component";
+import {PromijeniLozinkuComponent} from "./Components/promijeni-lozinku/promijeni-lozinku.component";
 
 const routes: Routes = [
   {path: '', component: OpeningPageComponent},
@@ -22,7 +27,12 @@ const routes: Routes = [
   {path: 'landingPage', component: LandingPageComponent},
   {
     path: 'dashboard', component: ProfileComponent, children: [
-      {path: 'mojeRezervacije', component: MojeRezervacijeComponent}
+      {path: 'mojiObjekti', component: MojiObjektiComponent},
+      {path: 'mojeRezervacije', component: MojeRezervacijeComponent},
+      {path: 'mojeRecenzije', component: MojeRecenzijeComponent},
+      {path: 'kreditnaKartica', component: PoveziKreditnuKarticuComponent},
+      {path: 'zahtjevi', component: ZahtjeviComponent},
+      {path: 'promijeniLozinku', component: PromijeniLozinkuComponent},
     ]
   },
   {path: '**', component: NotFoundComponent}

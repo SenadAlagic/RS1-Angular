@@ -33,6 +33,10 @@ import { SideNavComponent } from './Components/side-nav/side-nav.component';
 import { MojeRezervacijeComponent } from './Components/moje-rezervacije/moje-rezervacije.component';
 import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
 import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
+import { PoveziKreditnuKarticuComponent } from './Components/povezi-kreditnu-karticu/povezi-kreditnu-karticu.component';
+import {MojeRecenzijeComponent} from "./Components/moje-recenzije/moje-recenzije.component";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -52,6 +56,8 @@ import { LoginOpeningPageComponent } from './Components/login-opening-page/login
     MojeRezervacijeComponent,
     OpeningPageComponent,
     LoginOpeningPageComponent,
+    MojeRecenzijeComponent,
+    PoveziKreditnuKarticuComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,9 @@ import { LoginOpeningPageComponent } from './Components/login-opening-page/login
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

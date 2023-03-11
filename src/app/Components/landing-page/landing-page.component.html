@@ -1,1 +1,13 @@
-<p>landing-page works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="navbarContent">
+    <a routerLink="dashboard" id="bookspan"><span>Booking</span></a>
+    <div class="accountNavBar">
+      <span id="imeprez" [innerHTML]="workingUser.korisnik.ime+' '+workingUser.korisnik.prezime">Ime Prezime</span>
+      <span [matMenuTriggerFor]="menu" class="material-symbols-outlined" id="accountBtn">account_circle</span>
+    </div>
+    <mat-menu #menu="matMenu" yPosition="above" xPosition="before">
+      <button mat-menu-item (click)="NaProfil()">Profil</button>
+      <button mat-menu-item (click)="Logout()">Log out</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
