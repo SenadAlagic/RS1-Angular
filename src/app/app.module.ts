@@ -29,6 +29,8 @@ import {RegisterGostComponent} from './Components/register/register-gost-page/re
 import {RegisterVlasnikComponent} from './Components/register/register-vlasnik-page/register-vlasnik.component';
 import {InputFieldComponent} from './Components/input-field/input-field.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
+import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RegisterAdminComponent,
     RegisterGostComponent,
     RegisterVlasnikComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    OpeningPageComponent,
+    LoginOpeningPageComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatTooltipModule,
     RouterModule.forRoot(
       [
-        {path: '', component: HomePageComponent},
+        {path: '', component: OpeningPageComponent},
+        //{path: '', component: HomePageComponent},
         {path: 'loginGost', component: LoginGostComponent},
         {path: 'loginVlasnik', component: LoginVlasnikComponent},
         {path: '**', component: NotFoundComponent}
