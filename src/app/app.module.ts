@@ -18,7 +18,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import {NotFoundComponent} from './Components/not-found-page/not-found.component';
 import {LandingPageComponent} from './Components/landing-page/landing-page.component';
-import {HomePageComponent} from './Components/home-page/home-page.component';
 import {ProfileComponent} from './Components/profile-page/profile.component';
 import {DashboardVlasnikComponent} from './Components/dashboard-page/dashboard-vlasnik.component';
 import {RouterModule} from "@angular/router";
@@ -39,7 +38,6 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     AppComponent,
     NotFoundComponent,
     LandingPageComponent,
-    HomePageComponent,
     ProfileComponent,
     DashboardVlasnikComponent,
     LoginAdminComponent,
@@ -71,9 +69,10 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     RouterModule.forRoot(
       [
         {path: '', component: OpeningPageComponent},
-        //{path: '', component: HomePageComponent},
         {path: 'loginGost', component: LoginGostComponent},
         {path: 'loginVlasnik', component: LoginVlasnikComponent},
+        {path: 'registracijaVlasnik', component: RegisterVlasnikComponent},
+        {path: 'registracijaGost', component:RegisterGostComponent},
         {path: '**', component: NotFoundComponent}
       ]),
     ReactiveFormsModule,

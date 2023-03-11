@@ -1,6 +1,6 @@
 <div class="wrapper">
     <h1 class="wrapper-content">Log in as Hotel <label>{{OwnerOrGuest}}</label></h1>
-    <button class="wrapper-content" mat-raised-button color="primary">Log in</button>
-    <h3 class="wrapper-content">Don't have an account? Sign up!</h3>
-    <button class="wrapper-content" mat-raised-button color="primary">Sign up</button>
+    <button [routerLink]="OwnerOrGuest === 'Owner' ? 'loginVlasnik' :'loginGost'" class="wrapper-content loginBtn" mat-raised-button color="primary">Log in</button>
+    <a class="wrapper-content singupBtn" *ngIf="OwnerOrGuest==='Owner'" [routerLink]="'registracijaVlasnik'">Don't have an account? Sign up!</a>
+    <a class="wrapper-content singupBtn" *ngIf="OwnerOrGuest==='Guest'" [routerLink]="'registracijaGost'">Don't have an account? Sign up!</a>
 </div>
