@@ -35,7 +35,6 @@ import { SideNavComponent } from './Components/side-nav/side-nav.component';
 import { MojeRezervacijeComponent } from './Components/moje-rezervacije/moje-rezervacije.component';
 import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
 import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
-import { PasswordFieldComponent } from './Components/password-field/password-field.component';
 import { LoginFormComponent } from './Components/login/login-form/login-form.component';
 import { PoveziKreditnuKarticuComponent } from './Components/povezi-kreditnu-karticu/povezi-kreditnu-karticu.component';
 import {MojeRecenzijeComponent} from "./Components/moje-recenzije/moje-recenzije.component";
