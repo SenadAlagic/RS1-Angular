@@ -10,6 +10,7 @@ export class InputFieldComponent {
   @Input() id: string = "";
   @Input() label: any;
   @Input() input: any;
+  @Input() number: any;
 
   constructor() {
   }
