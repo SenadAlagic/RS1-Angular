@@ -16,6 +16,7 @@ import {MojiObjektiComponent} from "./Components/moji-objekti/moji-objekti.compo
 import {PoveziKreditnuKarticuComponent} from "./Components/povezi-kreditnu-karticu/povezi-kreditnu-karticu.component";
 import {ZahtjeviComponent} from "./Components/zahtjevi/zahtjevi.component";
 import {PromijeniLozinkuComponent} from "./Components/promijeni-lozinku/promijeni-lozinku.component";
+import {RegisterAdminComponent} from "./Components/register/register-admin-page/register-admin.component";
 
 const routes: Routes = [
   {path: '', component: OpeningPageComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'loginAdmin', component: LoginAdminComponent},
   {path: 'registerGost', component: RegisterGostComponent},
   {path: 'registerVlasnik', component: RegisterVlasnikComponent},
+  {path: 'registerAdmin', component: RegisterAdminComponent},
   {path: 'landingPage', component: LandingPageComponent},
   {
     path: 'dashboard', component: ProfileComponent, children: [

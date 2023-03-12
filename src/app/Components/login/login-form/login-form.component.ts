@@ -15,6 +15,7 @@ export class LoginFormComponent {
 
   @Input() OwnerGuestAdmin: string="User";
   url:string='';
+  postLogin:string='dashboard';
 
   constructor(private httpklijent: HttpClient, private router: Router) {
   }
@@ -49,18 +50,19 @@ export class LoginFormComponent {
     }
     else if(this.OwnerGuestAdmin=='guest') {
       this.url=MojConfig.adresa_servera + '/api/Korisnik/LoginGost';
+      this.postLogin='landingPage';
     }
     else if(this.OwnerGuestAdmin=='admin') {
       this.url=MojConfig.adresa_servera + '/api/Korisnik/LoginAdmin';
     }
 
-    this.httpklijent.post<LoginInformacije>(this.url, info).subscribe((x: LoginInformacije) => {
+    this.httpklijent.post<LoginInformacije>(this.url, info,MojConfig.http_opcije()).subscribe((x: LoginInformacije) => {
       if (x.isLogiran == false) {
         // @ts-ignore
         porukaError("Pogresan username i/ili password");
       } else {
         AutentifikacijaHelper.setLoginInfo(x);
-        this.router.navigate(['landingPage']);
+        this.router.navigate([this.postLogin]);
         // @ts-ignore
         porukaSuccess("Uspjesno ste se logirali!");
       }

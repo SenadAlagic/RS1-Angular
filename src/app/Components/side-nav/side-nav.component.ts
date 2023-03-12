@@ -3,6 +3,8 @@ import {LoginInformacije} from "../../Helpers/loginInformacije";
 import {AutentifikacijaHelper} from "../../Helpers/autentifikacija";
 import {Router} from "@angular/router";
 import {Korisnik} from "../../Helpers/korisnik";
+import {HttpClient} from "@angular/common/http";
+import {MojConfig} from "../../MojConfig";
 
 @Component({
   selector: 'app-side-nav',
@@ -14,7 +16,7 @@ export class SideNavComponent {
   token:LoginInformacije;
   ovajKorisnik:any;
   uloga:any;
-  constructor(private router: Router) {
+  constructor(private httpklijent:HttpClient, private router: Router) {
   }
   ngOnInit(){
     this.token=AutentifikacijaHelper.getLoginInfo();
@@ -32,5 +34,11 @@ export class SideNavComponent {
   NaLandingPage()
   {
     this.router.navigate(['landingPage']);
+  }
+  Logout()
+  {
+    this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', MojConfig.http_opcije()).subscribe(x=>{
+      this.router.navigate(['/']);
+    })
   }
 }
