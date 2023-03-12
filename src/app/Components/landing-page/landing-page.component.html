@@ -11,3 +11,57 @@
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
+<body>
+<div class="wrapper-all">
+
+  <img id="landingPageImg" src="assets/img/bookingImg.jpeg">
+
+  <div class="wrapper-inner">
+    <!--pretraga se se prikazati samo ako je korisnik-gost-->
+      <div class="pretragaDiv">
+        <div class="pretragaDestinacija">
+          <mat-form-field id="dest">
+            <mat-label>Gdje želite ići?</mat-label>
+            <input matInput type="text" [(ngModel)]="searchTerm" />
+            <button mat-icon-button matSuffix type="submit" (click)="Search()">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="fill" id="dat">
+            <mat-label>Odaberite datum</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Datum prijave">
+              <input matEndDate placeholder="Datum odjave">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+        <div class="pretragaDatumGosti">
+          <mat-form-field>
+            <mat-label>Broj odraslih osoba</mat-label>
+            <input matInput type="number" placeholder="Broj gostiju" [(ngModel)]="numGuests" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Broj djece</mat-label>
+            <input matInput type="number" placeholder="Do 5 godina" [(ngModel)]="numChildren"/>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Broj soba</mat-label>
+            <input matInput type="number" placeholder="Broj soba" [(ngModel)]="numRooms"/>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-fab extended color="primary" id="buttonPretrazi">
+        Pretraži
+      </button>
+    <!--
+    <div class="atraktivniGradovi">
+      <app-popularni-gradovi></app-popularni-gradovi>
+    </div>
+    -->
+  </div>
+</div>
+</body>
+
+

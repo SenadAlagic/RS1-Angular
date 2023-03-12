@@ -16,6 +16,11 @@ export class LandingPageComponent {
   token:any;
   workingUser:any;
 
+  searchTerm:any;
+  numGuests:number;
+  numChildren:number;
+  numRooms:number;
+
   ngOnInit(){
     this.token=AutentifikacijaHelper.getLoginInfo();
     this.ProvjeriUlogu();
@@ -35,10 +40,16 @@ export class LandingPageComponent {
   }
   Logout()
   {
-    this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', MojConfig.http_opcije()).subscribe(x=>{
+    let token=MojConfig.http_opcije();
+    console.log(token);
+    // @ts-ignore
+    AutentifikacijaHelper.setLoginInfo(null);
+
+    this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', null, token).subscribe(x=>{
       this.router.navigate(['/']);
-      // @ts-ignore
-      AutentifikacijaHelper.setLoginInfo(null);
     });
+  }
+  Search(){
+
   }
 }

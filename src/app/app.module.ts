@@ -6,7 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -64,37 +64,38 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MojeRecenzijeComponent,
     PoveziKreditnuKarticuComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatDividerModule,
-    MatDatepickerModule,
-    MatRadioModule,
-    MatNativeDateModule,
-    MatTooltipModule,
-    HttpClientModule,
-    MatCardModule,
-    RouterModule.forRoot(
-      [
-        {path: '', component: OpeningPageComponent},
-        {path: 'loginGost', component: LoginGostComponent},
-        {path: 'loginVlasnik', component: LoginVlasnikComponent},
-        {path: 'registracijaVlasnik', component: RegisterVlasnikComponent},
-        {path: 'registracijaGost', component:RegisterGostComponent},
-        {path: '**', component: NotFoundComponent}
-      ]),
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    RouterModule,
-    MatMenuModule,
-    MatToolbarModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatButtonModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatDividerModule,
+        MatDatepickerModule,
+        MatRadioModule,
+        MatNativeDateModule,
+        MatTooltipModule,
+        HttpClientModule,
+        MatCardModule,
+        RouterModule.forRoot(
+            [
+                {path: '', component: OpeningPageComponent},
+                {path: 'loginGost', component: LoginGostComponent},
+                {path: 'loginVlasnik', component: LoginVlasnikComponent},
+                {path: 'registracijaVlasnik', component: RegisterVlasnikComponent},
+                {path: 'registracijaGost', component: RegisterGostComponent},
+                {path: '**', component: NotFoundComponent}
+            ]),
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        RouterModule,
+        MatMenuModule,
+        MatToolbarModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
