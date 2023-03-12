@@ -13,6 +13,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatCardHeader } from '@angular/material/card';
 
 
 import {AppRoutingModule} from './app-routing.module';
@@ -32,6 +34,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { OpeningPageComponent } from './Components/opening-page/opening-page.component';
 import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
 import { PasswordFieldComponent } from './Components/password-field/password-field.component';
+import { LoginFormComponent } from './Components/login/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,8 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     InputFieldComponent,
     OpeningPageComponent,
     LoginOpeningPageComponent,
-    PasswordFieldComponent
+    PasswordFieldComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +70,7 @@ import { PasswordFieldComponent } from './Components/password-field/password-fie
     MatNativeDateModule,
     MatTooltipModule,
     HttpClientModule,
+    MatCardModule,
     RouterModule.forRoot(
       [
         {path: '', component: OpeningPageComponent},
