@@ -60,7 +60,7 @@ export class LoginFormComponent {
         porukaError("Pogresan username i/ili password");
       } else {
         AutentifikacijaHelper.setLoginInfo(x);
-        this.router.navigate(['putanja-landingPage']);
+        this.router.navigate(['landingPage']);
         // @ts-ignore
         porukaSuccess("Uspjesno ste se logirali!");
       }

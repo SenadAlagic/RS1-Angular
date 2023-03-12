@@ -37,9 +37,11 @@ import { OpeningPageComponent } from './Components/opening-page/opening-page.com
 import { LoginOpeningPageComponent } from './Components/login-opening-page/login-opening-page.component';
 import { LoginFormComponent } from './Components/login/login-form/login-form.component';
 import { PoveziKreditnuKarticuComponent } from './Components/povezi-kreditnu-karticu/povezi-kreditnu-karticu.component';
-import {MojeRecenzijeComponent} from "./Components/moje-recenzije/moje-recenzije.component";
-import {MatMenuModule} from "@angular/material/menu";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import { MojeRecenzijeComponent } from "./Components/moje-recenzije/moje-recenzije.component";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { RegisterFormComponent } from './Components/register/register-form/register-form.component';
+import { ChooseDateComponent } from './Components/choose-date/choose-date.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     LoginFormComponent,
     MojeRecenzijeComponent,
     PoveziKreditnuKarticuComponent,
+    RegisterFormComponent,
+    ChooseDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +91,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
         {path: 'loginVlasnik', component: LoginVlasnikComponent},
         {path: 'registracijaVlasnik', component: RegisterVlasnikComponent},
         {path: 'registracijaGost', component:RegisterGostComponent},
-        {path: '**', component: NotFoundComponent}
+        {path: '**', component: NotFoundComponent},
+        {path: 'putanja-landingPage', component: LandingPageComponent}
       ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,
