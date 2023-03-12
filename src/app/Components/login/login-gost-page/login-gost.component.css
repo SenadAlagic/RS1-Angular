@@ -38,7 +38,8 @@ h1{
 }
 
 .form{
-  margin-top: 10%;
+  width: 70%;
+  margin: 10% auto 0 auto;
 }
 
 #loginBtn{

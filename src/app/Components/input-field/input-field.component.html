@@ -1,7 +1,5 @@
-<p id="{{id}}">
-  <mat-form-field appearance="fill" class="inputField">
-    <mat-label>{{label}}</mat-label>
-    <input matInput placeholder="{{label}}" [formControl]="input">
-    <mat-error *ngIf="input.invalid">{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-</p>
+<mat-form-field appearance="fill" class="inputField" id="{{id}}">
+  <mat-label>{{label}}</mat-label>
+  <input matInput placeholder="{{label}}" [formControl]="input">
+  <mat-error *ngIf="input.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
