@@ -15,6 +15,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatCardHeader } from '@angular/material/card';
+import { MatToolbar } from '@angular/material/toolbar';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,6 +43,9 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { RegisterFormComponent } from './Components/register/register-form/register-form.component';
 import { ChooseDateComponent } from './Components/choose-date/choose-date.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { PretragaFormaComponent } from './Components/pretraga-forma/pretraga-forma.component';
+import { PopularniGradoviComponent } from './Components/popularni-gradovi/popularni-gradovi.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,9 @@ import { ChooseDateComponent } from './Components/choose-date/choose-date.compon
     PoveziKreditnuKarticuComponent,
     RegisterFormComponent,
     ChooseDateComponent,
+    NavbarComponent,
+    PretragaFormaComponent,
+    PopularniGradoviComponent,
   ],
     imports: [
         BrowserModule,
@@ -89,7 +96,8 @@ import { ChooseDateComponent } from './Components/choose-date/choose-date.compon
         RouterModule,
         MatMenuModule,
         MatToolbarModule,
-        FormsModule
+        FormsModule,
+        
     ],
   providers: [],
   bootstrap: [AppComponent]
