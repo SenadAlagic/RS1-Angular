@@ -1,1 +1,36 @@
-<p>register-gost works!</p>
+<body>
+<h1>Sign Up</h1>
+<div class="wrapper">
+  <div class="opsteInfo">
+    <app-input-field id="ime" label="Unesite ime" [input]="ime"></app-input-field>
+    <app-input-field id="prezime" label="Unesite prezime" [input]="prezime"></app-input-field>
+    <app-input-field label="Unesite email" [input]="email"></app-input-field>
+
+    <mat-form-field appearance="fill" class="inputOpste">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl]="datumRodjenja">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-radio-group aria-label="Spol:">
+      <label style="margin-right: 16px;">Spol:</label>
+      <mat-radio-button value="1" id="musko" checked="true">Muško</mat-radio-button>
+      <mat-radio-button value="2" id="zensko">Žensko</mat-radio-button>
+    </mat-radio-group>
+
+    <app-input-field id="telefon" label="Unesite broj telefona" [input]="brojTelefona"></app-input-field>
+  </div>
+  <div class="loginInfo">
+    <app-input-field id="username" label="Unesite username" [input]="username"></app-input-field>
+    <app-password-field id="password" label="Unesite password" [password]="password"></app-password-field>
+    <app-password-field id="password2" label="Ponovo unesite password" [password]="passwordConfirm"></app-password-field>
+  </div><
+</div>
+<div class="buttonForma">
+  <button mat-raised-button id="signupBtn" color="primary" (click)="Registracija()">Registrirajte se</button>
+  <br>
+  <a routerLink="/loginGost" id="prijava">Imate korisnički račun? Prijavite se.</a>
+</div>
+</body>
