@@ -13,6 +13,7 @@ export class MojConfig{
 
     if (autentifikacijaToken!=null)
       mojtoken = autentifikacijaToken.vrijednost;
+    console.log("Moj token: "+mojtoken);
     return {
       headers: {
         'autentifikacija-token': mojtoken,

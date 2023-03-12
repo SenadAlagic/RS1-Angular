@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {AutentifikacijaHelper} from "../../Helpers/autentifikacija";
+import {Router} from "@angular/router";
+import {MojConfig} from "../../MojConfig";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-landing-page',
@@ -8,7 +11,7 @@ import {AutentifikacijaHelper} from "../../Helpers/autentifikacija";
 })
 export class LandingPageComponent {
 
-  constructor() {
+  constructor(private httpklijent:HttpClient, private router:Router) {
   }
   token:any;
   workingUser:any;
@@ -28,10 +31,14 @@ export class LandingPageComponent {
   }
   NaProfil()
   {
-
+    this.router.navigate(['dashboard']);
   }
   Logout()
   {
-
+    this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', MojConfig.http_opcije()).subscribe(x=>{
+      this.router.navigate(['/']);
+      // @ts-ignore
+      AutentifikacijaHelper.setLoginInfo(null);
+    });
   }
 }

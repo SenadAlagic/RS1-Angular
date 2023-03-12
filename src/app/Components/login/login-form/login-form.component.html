@@ -13,8 +13,8 @@
         <a class="forgot-password" href="#">Forgot password?</a>
       </div>
       <button class="login-button card-content-items" mat-raised-button color="primary" (click)="Login()">Login</button>
-      <a class="register-link" *ngIf="OwnerGuestAdmin=='owner'" [routerLink]="['/registracijaVlasnik']">Don't have an account? Sign Up!</a>
-      <a class="register-link" *ngIf="OwnerGuestAdmin=='guest'" [routerLink]="['/registracijaGost']">Don't have an account? Sign Up!</a>
-      <a class="register-link" *ngIf="OwnerGuestAdmin=='admin'" [routerLink]="['/registracijaAdmin']">Don't have an account? Sign Up!</a>
+      <a class="register-link" *ngIf="OwnerGuestAdmin=='owner'" [routerLink]="['/registerVlasnik']">Don't have an account? Sign Up!</a>
+      <a class="register-link" *ngIf="OwnerGuestAdmin=='guest'" [routerLink]="['/registerGost']">Don't have an account? Sign Up!</a>
+      <a class="register-link" *ngIf="OwnerGuestAdmin=='admin'" [routerLink]="['/registerAdmin']">Don't have an account? Sign Up!</a>
   </mat-card-content>
 </mat-card> 
