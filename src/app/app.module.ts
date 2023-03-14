@@ -46,6 +46,9 @@ import { ChooseDateComponent } from './Components/choose-date/choose-date.compon
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { PretragaFormaComponent } from './Components/pretraga-forma/pretraga-forma.component';
 import { PopularniGradoviComponent } from './Components/popularni-gradovi/popularni-gradovi.component';
+import { MojProfilComponent } from './Components/moj-profil/moj-profil.component';
+import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +77,9 @@ import { PopularniGradoviComponent } from './Components/popularni-gradovi/popula
     NavbarComponent,
     PretragaFormaComponent,
     PopularniGradoviComponent,
+    MojProfilComponent,
+    DodajHotelComponent,
+    
   ],
     imports: [
         BrowserModule,
@@ -96,8 +102,7 @@ import { PopularniGradoviComponent } from './Components/popularni-gradovi/popula
         RouterModule,
         MatMenuModule,
         MatToolbarModule,
-        FormsModule,
-        
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

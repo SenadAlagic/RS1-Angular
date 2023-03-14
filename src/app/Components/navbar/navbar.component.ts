@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {MojConfig} from "../../MojConfig";
 import {Router} from "@angular/router";
@@ -14,6 +14,8 @@ export class NavbarComponent {
   putanja:any;
   workingUser:any;
   token:any;
+
+  @Input() svrha='';
 
   constructor(private httpklijent:HttpClient, private router:Router) {
   }

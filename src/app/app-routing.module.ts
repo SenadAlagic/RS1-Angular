@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes, RouterLinkActive} from "@angular/router";
 import {LoginGostComponent} from "./Components/login/login-gost-page/login-gost.component";
 import {LoginVlasnikComponent} from "./Components/login/login-vlasnik-page/login-vlasnik.component";
 import {LoginAdminComponent} from "./Components/login/login-admin-page/login-admin.component";
@@ -17,6 +17,8 @@ import {PoveziKreditnuKarticuComponent} from "./Components/povezi-kreditnu-karti
 import {ZahtjeviComponent} from "./Components/zahtjevi/zahtjevi.component";
 import {PromijeniLozinkuComponent} from "./Components/promijeni-lozinku/promijeni-lozinku.component";
 import {RegisterAdminComponent} from "./Components/register/register-admin-page/register-admin.component";
+import { MojProfilComponent } from './Components/moj-profil/moj-profil.component';
+import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.component';
 
 const routes: Routes = [
   {path: '', component: OpeningPageComponent},
@@ -35,6 +37,8 @@ const routes: Routes = [
       {path: 'kreditnaKartica', component: PoveziKreditnuKarticuComponent},
       {path: 'zahtjevi', component: ZahtjeviComponent},
       {path: 'promijeniLozinku', component: PromijeniLozinkuComponent},
+      {path: 'mojProfil', component: MojProfilComponent},
+      {path: 'dodajHotel', component: DodajHotelComponent},
     ]
   },
   {path: '**', component: NotFoundComponent}
@@ -44,7 +48,8 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    RouterLinkActive
   ]
 })
 export class AppRoutingModule {
