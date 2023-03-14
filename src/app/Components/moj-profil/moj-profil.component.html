@@ -1,12 +1,12 @@
 <div class="wrapper">
     <h1>Moj Profil</h1>
-    <app-input-field class="inputField" id="ime" label="Ime" [input]="ime" [disable]="disable"></app-input-field>
-    <app-input-field [disable]="disable" class="inputField" id="prezime" label="Prezime" [input]="prezime"></app-input-field>
-    <app-input-field [disable]="disable" class="inputField" id="email" label="Email" [input]="email"></app-input-field>
-    <app-input-field [disable]="disable" class="inputField" id="spol" label="Spol" [input]="spol"></app-input-field>
-    <app-choose-date [disable]="disable" class="inputField" id="datumRodjenja" label="Datum rodjenja" [input]="datumRodjenja"></app-choose-date>
-    <app-input-field [disable]="disable" class="inputField" id="brojTelefona" label="Broj telefona" [input]="brojTelefona"></app-input-field>
-    <app-input-field [disable]="disable"  *ngIf="workingUser.korisnik.uloga=='Vlasnik'" class="inputField"  class="card-content-items username inputField" id="brojRacuna" [number]="16" label="Broj racuna" [input]="brojRacuna"></app-input-field>
-    <app-input-field [disable]="disable"  *ngIf="workingUser.korisnik.uloga=='Vlasnik'" class="inputField" class="card-content-items username inputField" id="brojLicneKarte" [number]="9" label="Broj licne karte" [input]="brojLicneKarte"></app-input-field>
-    <button mat-raised-button id="urediButton" color="primary">Uredi</button>
+    <app-input-field class="inputField" id="ime" label="Ime" [input]="ime"></app-input-field>
+    <app-input-field class="inputField" id="prezime" label="Prezime" [input]="prezime"></app-input-field>
+    <app-input-field class="inputField" id="email" label="Email" [input]="email"></app-input-field>
+    <app-input-field class="inputField" id="spol" label="Spol" [input]="spol"></app-input-field>
+    <app-choose-date class="inputField" id="datumRodjenja" label="Datum rodjenja" [input]="datumRodjenja"></app-choose-date>
+    <app-input-field class="inputField" id="brojTelefona" label="Broj telefona" [input]="brojTelefona"></app-input-field>
+    <app-input-field *ngIf="workingUser.korisnik.uloga=='Vlasnik'" class="inputField"  class="card-content-items username inputField" id="brojRacuna" [number]="16" label="Broj racuna" [input]="brojRacuna"></app-input-field>
+    <app-input-field *ngIf="workingUser.korisnik.uloga=='Vlasnik'" class="inputField" class="card-content-items username inputField" id="brojLicneKarte" [number]="9" label="Broj licne karte" [input]="brojLicneKarte"></app-input-field>
+    <button mat-raised-button id="urediButton" color="primary" (click)="promijeniStanje()">{{ urediSpremi ? 'Uredi' : 'Spremi' }}</button>
 </div> 

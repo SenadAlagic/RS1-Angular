@@ -66,7 +66,6 @@ export class LoginFormComponent {
     else if(this.OwnerGuestAdmin=='admin') {
       this.url=MojConfig.adresa_servera + '/api/Korisnik/LoginAdmin';
     }
-  
 
     this.httpklijent.post<LoginInformacije>(this.url, info,MojConfig.http_opcije()).subscribe((x: LoginInformacije) => {
       if (x.isLogiran == false) {
@@ -74,6 +73,7 @@ export class LoginFormComponent {
         porukaError("Pogresan username i/ili password");
       } else {
         AutentifikacijaHelper.setLoginInfo(x);
+        this.token=AutentifikacijaHelper.getLoginInfo();
         this.router.navigate([this.postLogin]);
         this.ProvjeriUlogu();
         localStorage.setItem('Working-user', JSON.stringify(this.workingUser));

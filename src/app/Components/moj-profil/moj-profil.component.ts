@@ -12,10 +12,8 @@ import { AutentifikacijaHelper } from 'src/app/Helpers/autentifikacija';
   styleUrls: ['./moj-profil.component.css']
 })
 export class MojProfilComponent {
-
   workingUser:any;
-  token:any;
-  ovajKorisnik:any;
+  urediSpremi:boolean=true;
 
   ime = new FormControl('', [Validators.required]);
   prezime = new FormControl('', [Validators.required]);
@@ -23,23 +21,41 @@ export class MojProfilComponent {
   datumRodjenja = new FormControl(new Date().toLocaleDateString());
   brojTelefona = new FormControl('', [Validators.required]);
   spol = new FormControl('', [Validators.required]);
-
-  username = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
-  confirmedPassword = new FormControl('', [Validators.required]);
-
   brojRacuna = new FormControl('', [Validators.required]);
   brojLicneKarte = new FormControl('', [Validators.required]);
 
-  disable=true;
   constructor(private httpklijent:HttpClient, private router:Router) {
   }
 
-  ngOnInit(){
-    //@ts-ignore
-    this.workingUser=JSON.parse(localStorage.getItem("Working-user"));
-    console.log(this.workingUser);
+  promijeniStanje(){
+    this.urediSpremi=!this.urediSpremi;
+    this.disejbluj();
+  }
 
+  disejbluj(){
+    if(this.urediSpremi==true){
+      this.ime.disable();
+      this.prezime.disable();
+      this.email.disable();
+      this.datumRodjenja.disable();
+      this.brojTelefona.disable();
+      this.spol.disable();
+      this.brojRacuna.disable();
+      this.brojLicneKarte.disable();
+    }
+    else{
+      this.ime.enable();
+      this.prezime.enable();
+      this.email.enable();
+      this.datumRodjenja.enable();
+      this.brojTelefona.enable();
+      this.spol.enable();
+      this.brojRacuna.enable();
+      this.brojLicneKarte.enable();
+    }
+  }
+
+  setujVrijednosti(){
     this.ime.setValue(this.workingUser.korisnik.ime);
     this.prezime.setValue(this.workingUser.korisnik.prezime);
     this.email.setValue(this.workingUser.korisnik.email);
@@ -50,13 +66,13 @@ export class MojProfilComponent {
     this.spol.setValue(this.workingUser.korisnik.spol);    
   }
 
-  //OVAJ DIO KODA U NGONINIT I FUNKCIJU ISPOD SAM DODALA DA PROVJERIM ULOGU
-  //JER U OVISNOSTI OD NJE CE SE PRIKAZATI ILI NECE BROJ RACUNA I BROJ LICNE KARTE
-  //AKO IMA BOLJI NACIN SLOBODNO PROMIJENI
+  ngOnInit(){
+    //@ts-ignore
+    this.workingUser=JSON.parse(localStorage.getItem("Working-user"));
+    //console.log(this.workingUser);
+    this.setujVrijednosti();
+    this.disejbluj();
+  }
   
   //#TODO POSTAVITI MOJ PROFIL KAO DEFAULTNI KADA SE OTVORI KOMPONENTA PROFILE PAGE
-
-
-  
-
 }

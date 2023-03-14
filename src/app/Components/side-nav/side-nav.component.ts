@@ -42,6 +42,11 @@ export class SideNavComponent {
 
   Logout()
   {
+    let token=MojConfig.http_opcije();
+    // @ts-ignore
+    AutentifikacijaHelper.setLoginInfo(null);
+    //console.log(token);
+    
     this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', MojConfig.http_opcije()).subscribe(x=>{
       this.router.navigate(['/']);
     })

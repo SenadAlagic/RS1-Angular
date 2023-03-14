@@ -10,7 +10,6 @@ export class ChooseDateComponent {
   @Input() id: string = "";
   @Input() label: any;
   @Input() input: any;
-  @Input() disable:any;
   
   getErrorMessage() {
     return "Check your input!";
