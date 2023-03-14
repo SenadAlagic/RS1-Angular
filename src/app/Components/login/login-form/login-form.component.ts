@@ -16,6 +16,8 @@ export class LoginFormComponent {
   @Input() OwnerGuestAdmin: string="User";
   url:string='';
   postLogin:string='dashboard';
+  workingUser:any;
+  token:any;
 
   constructor(private httpklijent: HttpClient, private router: Router) {
   }
@@ -32,6 +34,15 @@ export class LoginFormComponent {
     if (this.password.hasError('required'))
       return false;
     return true;
+  }
+
+  ProvjeriUlogu(){
+    if(this.token.autentifikacijaToken.gost!=null) //niz provjera uloga korisnika
+      this.workingUser=this.token.autentifikacijaToken.gost;
+    else if(this.token.autentifikacijaToken.vlasnik!=null)
+      this.workingUser=this.token.autentifikacijaToken.vlasnik;
+    else
+      this.workingUser=this.token.autentifikacijaToken.admin;
   }
 
   Login() {
@@ -55,6 +66,7 @@ export class LoginFormComponent {
     else if(this.OwnerGuestAdmin=='admin') {
       this.url=MojConfig.adresa_servera + '/api/Korisnik/LoginAdmin';
     }
+  
 
     this.httpklijent.post<LoginInformacije>(this.url, info,MojConfig.http_opcije()).subscribe((x: LoginInformacije) => {
       if (x.isLogiran == false) {
@@ -63,6 +75,8 @@ export class LoginFormComponent {
       } else {
         AutentifikacijaHelper.setLoginInfo(x);
         this.router.navigate([this.postLogin]);
+        this.ProvjeriUlogu();
+        localStorage.setItem('Working-user', JSON.stringify(this.workingUser));
         // @ts-ignore
         porukaSuccess("Uspjesno ste se logirali!");
       }

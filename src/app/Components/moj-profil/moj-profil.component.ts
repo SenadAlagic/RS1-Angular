@@ -21,9 +21,8 @@ export class MojProfilComponent {
   prezime = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required]);
   datumRodjenja = new FormControl(new Date().toLocaleDateString());
-  musko = new FormControl(false);
-  zensko = new FormControl(false);
   brojTelefona = new FormControl('', [Validators.required]);
+  spol = new FormControl('', [Validators.required]);
 
   username = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
@@ -32,16 +31,23 @@ export class MojProfilComponent {
   brojRacuna = new FormControl('', [Validators.required]);
   brojLicneKarte = new FormControl('', [Validators.required]);
 
+  disable=true;
   constructor(private httpklijent:HttpClient, private router:Router) {
   }
 
   ngOnInit(){
+    //@ts-ignore
+    this.workingUser=JSON.parse(localStorage.getItem("Working-user"));
+    console.log(this.workingUser);
 
-    this.workingUser=localStorage.getItem('Working.user');
-
-    this.token=AutentifikacijaHelper.getLoginInfo();
-    this.ProvjeriUlogu();
-    console.log(this.ovajKorisnik);
+    this.ime.setValue(this.workingUser.korisnik.ime);
+    this.prezime.setValue(this.workingUser.korisnik.prezime);
+    this.email.setValue(this.workingUser.korisnik.email);
+    this.datumRodjenja.setValue(this.workingUser.korisnik.datum_rodjenja);
+    this.brojTelefona.setValue(this.workingUser.korisnik.broj_telefona);
+    this.brojRacuna.setValue(this.workingUser.brojBankovnogRacuna);
+    this.brojLicneKarte.setValue(this.workingUser.brojLicneKarte);
+    this.spol.setValue(this.workingUser.korisnik.spol);    
   }
 
   //OVAJ DIO KODA U NGONINIT I FUNKCIJU ISPOD SAM DODALA DA PROVJERIM ULOGU
@@ -50,15 +56,6 @@ export class MojProfilComponent {
   
   //#TODO POSTAVITI MOJ PROFIL KAO DEFAULTNI KADA SE OTVORI KOMPONENTA PROFILE PAGE
 
-  ProvjeriUlogu(){
-    if(this.token.autentifikacijaToken.gost!=null) //niz provjera uloga korisnika
-      this.ovajKorisnik=this.token.autentifikacijaToken.gost;
-    else if(this.token.autentifikacijaToken.vlasnik!=null)
-      this.ovajKorisnik=this.token.autentifikacijaToken.vlasnik;
-    else
-      this.ovajKorisnik=this.token.autentifikacijaToken.admin;
-  }
-  
 
   
 
