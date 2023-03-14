@@ -39,6 +39,7 @@ const routes: Routes = [
       {path: 'promijeniLozinku', component: PromijeniLozinkuComponent},
       {path: 'mojProfil', component: MojProfilComponent},
       {path: 'dodajHotel', component: DodajHotelComponent},
+      { path: '', redirectTo: 'mojProfil', pathMatch: 'full' }
     ]
   },
   {path: '**', component: NotFoundComponent}
