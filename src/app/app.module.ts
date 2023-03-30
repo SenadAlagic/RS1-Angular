@@ -14,8 +14,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatCardHeader } from '@angular/material/card';
 import { MatToolbar } from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,7 +49,22 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { PretragaFormaComponent } from './Components/pretraga-forma/pretraga-forma.component';
 import { PopularniGradoviComponent } from './Components/popularni-gradovi/popularni-gradovi.component';
 import { MojProfilComponent } from './Components/moj-profil/moj-profil.component';
-import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.component';
+import { DodajHotelComponent } from './Components/NoviHotel/dodaj-hotel/dodaj-hotel.component';
+import { TextareaComponent } from './Components/textarea/textarea.component';
+import { UploadFileComponent } from './Components/upload-file/upload-file.component';
+import { DodajSobuComponent } from './Components/NoviHotel/dodaj-sobu/dodaj-sobu.component';
+import { PopisSobaComponent } from './Components/NoviHotel/popis-soba/popis-soba.component';
+import { DodajSlikeComponent } from './Components/NoviHotel/dodaj-slike/dodaj-slike.component';
+import { DodaneSobeComponent } from './Components/NoviHotel/dodane-sobe/dodane-sobe.component';
+import { MojiObjektiComponent } from './Components/moji-objekti/moji-objekti.component';
+import { AddHotelComponent } from './Components/NoviHotel/add-hotel/add-hotel.component';
+import { OpsteInformacijeComponent } from './Components/NoviHotel/opste-informacije/opste-informacije.component';
+import { HotelDetaljiComponent } from './Components/NoviHotel/hotel-detalji/hotel-detalji.component';
+import { HotelAmenitiesComponent } from './Components/NoviHotel/hotel-amenities/hotel-amenities.component';
+import { RoomAmenitiesComponent } from './Components/NoviHotel/room-amenities/room-amenities.component';
+import { AddSobaComponent } from './Components/NoviHotel/add-soba/add-soba.component';
+import {MatTableModule} from "@angular/material/table";
+import { SelectBoxComponent } from './Components/select-box/select-box.component';
 
 
 @NgModule({
@@ -79,7 +96,20 @@ import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.compon
     PopularniGradoviComponent,
     MojProfilComponent,
     DodajHotelComponent,
-    
+    TextareaComponent,
+    UploadFileComponent,
+    DodajSobuComponent,
+    PopisSobaComponent,
+    DodajSlikeComponent,
+    DodaneSobeComponent,
+    MojiObjektiComponent,
+    AddHotelComponent,
+    OpsteInformacijeComponent,
+    HotelDetaljiComponent,
+    HotelAmenitiesComponent,
+    RoomAmenitiesComponent,
+    AddSobaComponent,
+    SelectBoxComponent,
   ],
     imports: [
         BrowserModule,
@@ -102,7 +132,10 @@ import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.compon
         RouterModule,
         MatMenuModule,
         MatToolbarModule,
-        FormsModule
+        FormsModule,
+        MatCheckboxModule,
+        MatTableModule,
+        MatSelectModule
     ],
   providers: [],
   bootstrap: [AppComponent]

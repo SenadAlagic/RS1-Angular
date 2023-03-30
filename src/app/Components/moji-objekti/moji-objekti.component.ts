@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-moji-objekti',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class MojiObjektiComponent {
 
+  constructor(private router:Router){}
+
+  toAddHotel(){
+    this.router.navigate(['/dodajHotel/addHotel',0]);
+  }
 }

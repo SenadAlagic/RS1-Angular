@@ -23,7 +23,7 @@ export class SideNavComponent {
 
     this.token=AutentifikacijaHelper.getLoginInfo();
     this.ProvjeriUlogu();
-    console.log(this.ovajKorisnik);
+    //console.log(this.ovajKorisnik);
   }
 
   ProvjeriUlogu(){
@@ -46,7 +46,7 @@ export class SideNavComponent {
     // @ts-ignore
     AutentifikacijaHelper.setLoginInfo(null);
     //console.log(token);
-    
+
     this.httpklijent.post(MojConfig.adresa_servera+'/api/Korisnik/Logout', MojConfig.http_opcije()).subscribe(x=>{
       this.router.navigate(['/']);
     })

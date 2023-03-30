@@ -1,19 +1,28 @@
 export class Hotel{
-  id:number;
   naziv:string;
   opis:string;
-  adresse:string;
-  vlasnikId:number;
-  hotelDetaljiId:number;
-  email:string;
+  adresa:string;
+  vlasnikID:number;
+  hotelDetaljiID:number;
+  emailHotela:string;
   brojTelefona:string;
-  gradId:number;
+  slika?:string;
+  gradID:number;
   ukupanBrojSoba:number;
-  ukupanBrojJednokrevetnih:number;
-  ukupanBrojDvokrevetnih:number;
-  ukupanBrojTrokrevetnih:number;
+  brojJednokrevetnihSoba:number;
+  brojDvokrevetnihSoba:number;
+  brojTrokrevetnihSoba:number;
   brojSpratova:number;
   vrijemeCheckIna:string;
   vrijemeCheckOuta:string;
 }
 
+export class HotelDetalji{
+  konferencijskaSala:boolean;
+  bazen:boolean;
+  spa:boolean;
+  sauna:boolean;
+  teretana:boolean;
+  restoran:boolean;
+  kafic:boolean;
+}

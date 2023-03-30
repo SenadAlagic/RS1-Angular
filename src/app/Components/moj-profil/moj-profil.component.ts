@@ -73,6 +73,4 @@ export class MojProfilComponent {
     this.setujVrijednosti();
     this.disejbluj();
   }
-  
-  //#TODO POSTAVITI MOJ PROFIL KAO DEFAULTNI KADA SE OTVORI KOMPONENTA PROFILE PAGE
 }

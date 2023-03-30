@@ -1,0 +1,24 @@
+<mat-card class="card" *ngFor="let room of rooms">
+    <mat-card-title>{{ room.naziv }}</mat-card-title>
+    <mat-card-content>
+      <p>Broj soba: <label id="numberOfRooms">{{ room.kapacitet }}</label></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary">Uredi</button>
+      <button mat-button color="warn">Obriši</button>
+    </mat-card-actions>
+</mat-card>
+   
+
+<!-- TESTNI PRIMJER -->
+    
+ <!-- <mat-card class="card">
+    <mat-card-title>Dvokrevetna Soba</mat-card-title>
+    <mat-card-content>
+      <p>Number of this type: <label id="numberOfRooms">10</label></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary">Edit</button>
+      <button mat-button color="warn">Delete</button>
+    </mat-card-actions>
+</mat-card> -->

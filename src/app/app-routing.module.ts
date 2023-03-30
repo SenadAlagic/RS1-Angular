@@ -18,7 +18,16 @@ import {ZahtjeviComponent} from "./Components/zahtjevi/zahtjevi.component";
 import {PromijeniLozinkuComponent} from "./Components/promijeni-lozinku/promijeni-lozinku.component";
 import {RegisterAdminComponent} from "./Components/register/register-admin-page/register-admin.component";
 import { MojProfilComponent } from './Components/moj-profil/moj-profil.component';
-import { DodajHotelComponent } from './Components/dodaj-hotel/dodaj-hotel.component';
+import { DodajHotelComponent } from './Components/NoviHotel/dodaj-hotel/dodaj-hotel.component';
+import { PopisSobaComponent } from './Components/NoviHotel/popis-soba/popis-soba.component';
+import { DodajSobuComponent } from './Components/NoviHotel/dodaj-sobu/dodaj-sobu.component';
+import { DodajSlikeComponent } from './Components/NoviHotel/dodaj-slike/dodaj-slike.component';
+import { DodaneSobeComponent } from './Components/NoviHotel/dodane-sobe/dodane-sobe.component';
+import { FormsModule } from '@angular/forms';
+import { AddHotelComponent } from './Components/NoviHotel/add-hotel/add-hotel.component';
+import { AddSobaComponent } from './Components/NoviHotel/add-soba/add-soba.component';
+import { SelectBoxComponent } from './Components/select-box/select-box.component';
+ 
 
 const routes: Routes = [
   {path: '', component: OpeningPageComponent},
@@ -38,11 +47,20 @@ const routes: Routes = [
       {path: 'zahtjevi', component: ZahtjeviComponent},
       {path: 'promijeniLozinku', component: PromijeniLozinkuComponent},
       {path: 'mojProfil', component: MojProfilComponent},
-      {path: 'dodajHotel', component: DodajHotelComponent},
       { path: '', redirectTo: 'mojProfil', pathMatch: 'full' }
     ]
   },
-  {path: '**', component: NotFoundComponent}
+  {
+    path: 'dodajHotel', component: DodajHotelComponent,children: [
+      { path: 'addHotel/:currentIndex', component: AddHotelComponent },
+      {path: 'addSoba', component: AddSobaComponent},
+      {path: 'popisSoba', component: PopisSobaComponent},
+      {path: 'dodajSobu', component: DodajSobuComponent},
+      {path: 'dodajSlike', component: DodajSlikeComponent},
+      {path: 'dodaneSobe', component: DodaneSobeComponent},
+    ],
+  },
+  {path: '**', component: NotFoundComponent},
 ]
 
 @NgModule({
@@ -50,7 +68,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    RouterLinkActive
+    RouterLinkActive,
+    FormsModule
   ]
 })
 export class AppRoutingModule {

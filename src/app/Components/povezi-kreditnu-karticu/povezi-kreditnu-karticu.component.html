@@ -1,3 +1,11 @@
 <div class="wrapper">
-    <h1>Povežite Kreditnu Karticu</h1>
+  <h1>Povežite Kreditnu Karticu</h1>
+  <div id="poveziKarticu">
+    <app-password-field [password]="brojKartice" label="Broj kreditne kartice"></app-password-field>
+    <div id="selectors">
+      <app-input-field [input]="datumIsteka" label="Datum isteka"></app-input-field>
+      <app-password-field [password]="CVV" label="CVV"></app-password-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="DodajKarticu()">Dodaj karticu</button>
+  </div>
 </div>

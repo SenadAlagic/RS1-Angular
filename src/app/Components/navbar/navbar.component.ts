@@ -11,7 +11,7 @@ import {AutentifikacijaHelper} from "../../Helpers/autentifikacija";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  putanja:any;
+  @Input() putanja:any;
   workingUser:any;
   token:any;
 

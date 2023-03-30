@@ -38,10 +38,10 @@ export class RegisterFormComponent {
 
   Validiraj1() {
     this.godina=String(this.datumRodjenja.getRawValue()).substring(11,15);
-    if(new Date().getFullYear()-13<parseInt(this.godina))
-    {
-      return false;
-    }
+    //if(new Date().getFullYear()-13<parseInt(this.godina))
+    //{
+    //  return false;
+    //}
     if (this.email.hasError('required'))
       return false;
     if (this.email.hasError('email'))
@@ -103,8 +103,9 @@ export class RegisterFormComponent {
       return;
 
     this.spolNovi = "Zenski";
-    if (this.musko)
-        this.spolNovi = "Muski";
+    if (this.musko.value){
+      this.spolNovi = "Muski";
+    }
 
     if(this.OwnerGuest=='owner') {
       this.url=MojConfig.adresa_servera + '/api/Korisnik/RegistracijaVlasnik';

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dodaj-hotel.component.css']
 })
 export class DodajHotelComponent {
-
+  hotelInfo={
+    basicInfo:{},
+    roomInfo:{},
+    otherInfo:{},
+  }
 }

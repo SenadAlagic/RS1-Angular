@@ -17,7 +17,7 @@
             <mat-radio-button value="1" id="musko" checked="true">Muško</mat-radio-button>
             <mat-radio-button value="2" id="zensko">Žensko</mat-radio-button>
             </mat-radio-group>
-          <app-input-field id="brojTelefona" label="Broj telefona" [input]="brojTelefona"></app-input-field>
+          <app-input-field id="brojTelefona" label="Broj telefona" [type]="'number'" [input]="brojTelefona"></app-input-field>
       </mat-card-content>
       <mat-card-content class="card-content" id="login-informations" [style.width]="OwnerGuest=='owner'?'30%':'45%'" [style.border-right]="OwnerGuest=='guest'?'none':'1px solid var(--silver)'">
           <app-input-field id="username" label="Username" [input]=username></app-input-field>
@@ -25,7 +25,7 @@
           <app-password-field id="password2" label="Password" [password]=confirmedPassword></app-password-field>
       </mat-card-content>
       <mat-card-content class="card-content" id="hotel-owner-informations" *ngIf="'showHotelOwnerInfo'" [style.display]="OwnerGuest=='guest'? 'none':'block'" [style.width]="OwnerGuest == 'guest' ? '0' : '30%'">
-          <app-input-field class="card-content-items username" id="brojRacuna" [number]="16" label="Broj racuna" [input]=brojRacuna></app-input-field>
+          <app-input-field class="card-content-items username" [type]="'number'" id="brojRacuna" [number]="16" label="Broj racuna" [input]=brojRacuna></app-input-field>
           <app-input-field class="card-content-items username" id="brojLicneKarte" [number]="9" label="Broj licne karte" [input]=brojLicneKarte></app-input-field>
       </mat-card-content>
     </mat-card-content>

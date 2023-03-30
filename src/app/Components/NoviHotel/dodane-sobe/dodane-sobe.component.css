@@ -1,0 +1,17 @@
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin:1rem 0 1rem 0;
+}
+
+#numberOfRooms{
+    font-weight: bold;
+}
+
+mat-card-title{
+    font-size: 1rem;
+}

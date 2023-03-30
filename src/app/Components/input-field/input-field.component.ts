@@ -11,6 +11,7 @@ export class InputFieldComponent {
   @Input() label: any;
   @Input() input: any;
   @Input() number: any;
+  @Input() type: any;
   
   constructor() {
   }
